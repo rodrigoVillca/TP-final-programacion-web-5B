@@ -1,0 +1,34 @@
+body {
+  background-color: rgb(255, 255, 255);
+  margin: 0%;
+}
+
+.contenedor {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-auto-rows: auto;
+  gap: 20px;
+  list-style: none;
+}
+.capsula {
+  background-color: grey;
+}
+.inicio {
+  background-color: white;
+  text-align: center;
+  font-size: 3.125rem;
+}
+.mi_div {
+  background-color: rgb(60, 62, 68);
+  display: flex;
+  border-radius: 1em;
+}
+
+img {
+  border-top-left-radius: 1em;
+  border-bottom-left-radius: 1em;
+}
+
+.texto {
+  padding-left: 2em;
+}
