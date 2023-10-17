@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useCharacters } from "../hooks/useCharacters";
 import "./style.css";
+import { Svg } from "./svg";
 export function Char() {
   const { personajes, getAllCharacters } = useCharacters();
 
@@ -15,7 +16,28 @@ export function Char() {
 
   return (
     <body>
-      <h1> The rick and Morty API</h1>
+      <header>
+        <div className="svg">
+          <Svg />
+        </div>
+        <div className="links">
+          <ul>
+            <li>
+              <p>Docs</p>
+            </li>
+            <li>
+              <p>About</p>
+            </li>
+            <li>
+              <span>support us</span>
+            </li>
+          </ul>
+        </div>
+      </header>
+      <div className="morty">
+        <h1> The Rick and Morty API</h1>
+      </div>
+
       <div className="capsula">
         <ul className="contenedor">
           {personajes.map((personaje, index) => (

@@ -1,5 +1,4 @@
 import { Char } from "./conponents/Characters";
-
 function App() {
   return (
     <>
