@@ -14,9 +14,15 @@ export function Char() {
     getAllCharacters();
   }, []);
 
+  let episodios = [];
+  //hacer un map y pusher a mi array vacio
+  const handleClick = (episodes) => {
+    episodes.map((episode) => episodios.push(episode));
+  };
+
   return (
     <body>
-      <header>
+      <header className="linkss">
         <div className="svg">
           <Svg />
         </div>
@@ -29,7 +35,7 @@ export function Char() {
               <p>About</p>
             </li>
             <li>
-              <span>support us</span>
+              <span class="span">support us</span>
             </li>
           </ul>
         </div>
@@ -51,14 +57,25 @@ export function Char() {
                   </p>
                   <p>Last known location:</p>
                   <h4>{personaje.origin.name}</h4>
-                  <p>First seen in:</p>
-                  <h4>--------</h4>
+                  <p
+                    className="episodes"
+                    onClick={() => handleClick(personaje.episode)}
+                  >
+                    episodes
+                  </p>
                 </div>
               </div>
             </li>
           ))}
         </ul>
       </div>
+      <footer>
+        <ul>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
+      </footer>
     </body>
   );
 }
