@@ -3,7 +3,8 @@ import { useCharacters } from "../hooks/useCharacters";
 import "./style.css";
 import { Svg } from "./svg";
 export function Char() {
-  const { personajes, getAllCharacters } = useCharacters();
+  const { personajes, getAllCharacters, getAllEpisodes, episodes } =
+    useCharacters(); //desestructuracion
 
   // hook que nos permite ejecutar codigo cuando nosotros necesitemos
   // useEffect recibe 2 parametros, 1ro es una funcion que va a ejecutar codigo
@@ -14,14 +15,19 @@ export function Char() {
     getAllCharacters();
   }, []);
 
+  useEffect(() => {
+    episodes.map((episode) => {});
+  }, [episodes]);
+
   let episodios = [];
   //hacer un map y pusher a mi array vacio
   const handleClick = (episodes) => {
-    episodes.map((episode) => episodios.push(episode));
+    episodes.map((episode) => episodios.push(episode.slice(40)));
+    getAllEpisodes(episodios);
   };
 
   return (
-    <body>
+    <>
       <header className="linkss">
         <div className="svg">
           <Svg />
@@ -35,7 +41,7 @@ export function Char() {
               <p>About</p>
             </li>
             <li>
-              <span class="span">support us</span>
+              <span className="span">support us</span>
             </li>
           </ul>
         </div>
@@ -76,6 +82,6 @@ export function Char() {
           <li></li>
         </ul>
       </footer>
-    </body>
+    </>
   );
 }
