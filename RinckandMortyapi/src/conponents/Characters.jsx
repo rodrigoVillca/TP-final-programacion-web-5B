@@ -16,7 +16,12 @@ export function Char() {
   }, []);
 
   useEffect(() => {
-    episodes.map((episode) => {});
+    if (length.episodes > 1) {
+      console.log(episodes);
+    } else {
+    }
+
+    //episodes.map((episode) => {});
   }, [episodes]);
 
   let episodios = [];
